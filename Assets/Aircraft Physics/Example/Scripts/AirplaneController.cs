@@ -43,21 +43,27 @@ public class AirplaneController : MonoBehaviour
         Pitch = Input.GetAxis("Vertical");
         Roll = Input.GetAxis("Horizontal");
         Yaw = Input.GetAxis("Yaw");
-
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             thrustPercent = thrustPercent > 0 ? 0 : 1f;
         }
+        */
+
+        thrustPercent = MobileAirplaneController.instance.slider.value;
+
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             Flap = Flap > 0 ? 0 : 0.3f;
         }
-
+/*
         if (Input.GetKeyDown(KeyCode.B))
         {
             brakesTorque = brakesTorque > 0 ? 0 : 100f;
         }
+*/
+        brakesTorque = MobileAirplaneController.instance.brakeSlider.value;
 
         displayText.text = "V: " + ((int)rb.velocity.magnitude).ToString("D3") + " m/s\n";
         displayText.text += "A: " + ((int)transform.position.y).ToString("D4") + " m\n";
