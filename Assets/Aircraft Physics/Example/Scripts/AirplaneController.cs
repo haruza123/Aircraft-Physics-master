@@ -36,13 +36,36 @@ public class AirplaneController : MonoBehaviour
     {
         aircraftPhysics = GetComponent<AircraftPhysics>();
         rb = GetComponent<Rigidbody>();
+        if (aircraftPhysics == null)
+        {
+            Debug.LogError("AircraftPhysics tidak ditemukan pada objek " + gameObject.name);
+        }
+
+        rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody tidak ditemukan pada objek " + gameObject.name);
+        }
     }
 
     private void Update()
     {
+        if (MobileAirplaneController.instance == null)
+        {
+            Debug.LogError("MobileAirplaneController.instance is null! Pastikan MobileAirplaneController ada dan aktif di scene.");
+            return; // Hentikan eksekusi untuk mencegah error lebih lanjut.
+        }
+
+        if (MobileAirplaneController.instance.slider == null || MobileAirplaneController.instance.brakeSlider == null)
+        {
+            Debug.LogError("Slider atau brakeSlider di MobileAirplaneController belum dihubungkan di Inspector!");
+            return; // Hindari akses lebih lanjut jika slider tidak valid.
+        }
+        
         Pitch = Input.GetAxis("Vertical") + MobileAirplaneController.instance.verticalInput;
-        Roll = Input.GetAxis("Horizontal") +MobileAirplaneController.instance.horizontalInput;
-        Yaw = Input.GetAxis("Yaw") +MobileAirplaneController.instance.yawInput;
+        Roll = Input.GetAxis("Horizontal") + MobileAirplaneController.instance.horizontalInput;
+        Yaw = Input.GetAxis("Yaw") + MobileAirplaneController.instance.yawInput;
+
         /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -51,6 +74,7 @@ public class AirplaneController : MonoBehaviour
         */
 
         thrustPercent = MobileAirplaneController.instance.slider.value;
+        brakesTorque = MobileAirplaneController.instance.brakeSlider.value;
 
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -63,7 +87,6 @@ public class AirplaneController : MonoBehaviour
             brakesTorque = brakesTorque > 0 ? 0 : 100f;
         }
 */
-        brakesTorque = MobileAirplaneController.instance.brakeSlider.value;
 
         displayText.text = "V: " + ((int)rb.velocity.magnitude).ToString("D3") + " m/s\n";
         displayText.text += "A: " + ((int)transform.position.y).ToString("D4") + " m\n";

@@ -19,6 +19,16 @@ public class MobileAirplaneController : MonoBehaviour
     void Start()
     {
         instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            Debug.Log("MobileAirplaneController instance berhasil diinisialisasi.");
+        }
+        else if (instance != this)
+        {
+            Debug.LogWarning("Duplicate MobileAirplaneController instance ditemukan dan dihancurkan.");
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -26,6 +36,18 @@ public class MobileAirplaneController : MonoBehaviour
     {
         
     }
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this; // Tetapkan instance pertama
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject); // Hancurkan instance duplikat
+        }
+    }
+
 
     public void SetVertical(float val){
         verticalInput = val;

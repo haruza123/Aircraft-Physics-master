@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Aircraft Physics/MainMenu.unity
+    guid: 002fdc0ba0721f84fa3ff36337b4306a
+  - enabled: 1
+    path: Assets/Aircraft Physics/Flight.unity
+    guid: bebc3c3814e2be14785d434f04ea056d
   m_configObjects: {}

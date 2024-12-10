@@ -17,8 +17,10 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void StartGame(){
-        PlayerPrefs.SetInt("SelectedAircraft",0);
-        SceneManager.LoadSceneAsync("Flight");
+    public void StartGame(int idx)  
+    {
+        PlayerPrefs.SetInt("SelectedAircraft", idx); // Simpan indeks pesawat
+        Debug.Log("Selected Aircraft Index set to: " + idx); // Debug untuk memastikan nilai benar
+        SceneManager.LoadSceneAsync("Flight"); // Ganti dengan nama scene Anda
     }
 }
