@@ -66,12 +66,12 @@ public class AirplaneController : MonoBehaviour
         Roll = Input.GetAxis("Horizontal") + MobileAirplaneController.instance.horizontalInput;
         Yaw = Input.GetAxis("Yaw") + MobileAirplaneController.instance.yawInput;
 
-        /*
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             thrustPercent = thrustPercent > 0 ? 0 : 1f;
         }
-        */
+        
 
         thrustPercent = MobileAirplaneController.instance.slider.value;
         brakesTorque = MobileAirplaneController.instance.brakeSlider.value;
