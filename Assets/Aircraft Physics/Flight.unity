@@ -149,6 +149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobileAirplaneController
       objectReference: {fileID: 0}
+    - target: {fileID: 5384151350448474788, guid: 67c84c40b943489468734bd762e838ed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7495101414240655684, guid: 67c84c40b943489468734bd762e838ed,
         type: 3}
       propertyPath: m_AnchorMax.y
