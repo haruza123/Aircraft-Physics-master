@@ -416,6 +416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5325511989785655304}
+  - {fileID: 7838356043366516178}
   m_Father: {fileID: 3679827764468181079}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1577,6 +1578,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AircraftVisual2
       objectReference: {fileID: 0}
+    - target: {fileID: 7017334949483707028, guid: cffcc0d5d976f674ab315d36b603fe80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cffcc0d5d976f674ab315d36b603fe80, type: 3}
 --- !u!4 &5325511989785655304 stripped
@@ -1584,4 +1590,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3345451871348373483, guid: cffcc0d5d976f674ab315d36b603fe80,
     type: 3}
   m_PrefabInstance: {fileID: 7459485115868205027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8161033254150216729
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3679827763698252153}
+    m_Modifications:
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947361741001823412, guid: f867d9eb1f2cc094db53cbf5f1291778,
+        type: 3}
+      propertyPath: m_Name
+      value: AircraftVisual1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f867d9eb1f2cc094db53cbf5f1291778, type: 3}
+--- !u!4 &7838356043366516178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2127598755567098315, guid: f867d9eb1f2cc094db53cbf5f1291778,
+    type: 3}
+  m_PrefabInstance: {fileID: 8161033254150216729}
   m_PrefabAsset: {fileID: 0}

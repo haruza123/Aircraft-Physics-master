@@ -1509,6 +1509,7 @@ MonoBehaviour:
   aircraftPrefabs:
   - {fileID: 683976457008724074, guid: dcddbf53122779e41ac2ed5fd58699b6, type: 3}
   - {fileID: 683976457008724074, guid: 9098b81a8fe4a3d41a4f8dace1a48897, type: 3}
+  - {fileID: 683976457008724074, guid: bd2f31ade48afb64988469aea5e6bb69, type: 3}
 --- !u!114 &1544459719
 MonoBehaviour:
   m_ObjectHideFlags: 0
