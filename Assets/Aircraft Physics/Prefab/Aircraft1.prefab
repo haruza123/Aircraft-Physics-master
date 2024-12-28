@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4585266591252750157}
+  - component: {fileID: 4351902945412576321}
   m_Layer: 0
   m_Name: Aircraft1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,6 +37,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4351902945412576321
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683976457008724074}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2566639652673278514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,9 +1067,10 @@ GameObject:
   - component: {fileID: 3679827764468181072}
   - component: {fileID: 3679827764468181073}
   - component: {fileID: 3679827764468181074}
+  - component: {fileID: 8207090067709845796}
   m_Layer: 0
   m_Name: Aircraft
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1092,7 +1108,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!114 &3679827764468181073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,8 +1132,6 @@ MonoBehaviour:
   - {fileID: 3679827764656450720}
   - {fileID: 3679827763124045418}
   - {fileID: 3679827763037164041}
-  weatherSystem: {fileID: 3007308853256999002, guid: 382288565e0737e42bd05556f9374efe,
-    type: 3}
 --- !u!114 &3679827764468181074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1164,20 @@ MonoBehaviour:
   Roll: 0
   Flap: 0
   displayText: {fileID: 5354146598635661904}
-  weatherSystem: {fileID: 0}
+--- !u!64 &8207090067709845796
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3679827764468181078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &3679827764613088403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1539,7 @@ PrefabInstance:
     - target: {fileID: 1668942335272531416, guid: eac7e75682ac71447a04eed7f56efbbb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1668942336621946484, guid: eac7e75682ac71447a04eed7f56efbbb,
         type: 3}
