@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FlightTimer : MonoBehaviour
 {
     public Text timerText; 
-    public float flightDuration = 10f; 
+    public float flightDuration = 180f; 
     private float timer;
     private bool isTimerRunning = false;
 
