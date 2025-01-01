@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 70bdcd1ae1196ff44aea60f77e9239f6, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1312,6 +1312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1387,13 +1388,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.8376894, y: -0.13097274, z: -0.08356527, w: 0.52358335}
+  m_LocalRotation: {x: 0.24049772, y: 0.3851386, z: 0.4719118, w: 0.7557304}
   m_LocalPosition: {x: 93.252426, y: -1401.4323, z: 6011.755}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1555101580}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 121.20599, y: 32.33899, z: 36.327988}
+  m_LocalEulerAnglesHint: {x: 0, y: 54.008995, z: 63.964996}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eeea64ea540534fac9f4ff4af7d348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionDuration: 300
+  skyboxSiang: {fileID: 2100000, guid: 70bdcd1ae1196ff44aea60f77e9239f6, type: 2}
+  skyboxSore: {fileID: 2100000, guid: 19b325d8192ae6a449129122516d0427, type: 2}
+  sunLight: {fileID: 705507994}
 --- !u!1 &938716193
 GameObject:
   m_ObjectHideFlags: 0
