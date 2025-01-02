@@ -49,50 +49,63 @@ public class AirplaneController : MonoBehaviour
     }
 
     private void Update()
+{
+    if (MobileAirplaneController.instance == null)
     {
-        if (MobileAirplaneController.instance == null)
-        {
-            Debug.LogError("MobileAirplaneController.instance is null! Pastikan MobileAirplaneController ada dan aktif di scene.");
-            return; // Hentikan eksekusi untuk mencegah error lebih lanjut.
-        }
-
-        if (MobileAirplaneController.instance.slider == null || MobileAirplaneController.instance.brakeSlider == null)
-        {
-            Debug.LogError("Slider atau brakeSlider di MobileAirplaneController belum dihubungkan di Inspector!");
-            return; // Hindari akses lebih lanjut jika slider tidak valid.
-        }
-        
-        Pitch = Input.GetAxis("Vertical") + MobileAirplaneController.instance.verticalInput;
-        Roll = Input.GetAxis("Horizontal") + MobileAirplaneController.instance.horizontalInput;
-        Yaw = Input.GetAxis("Yaw") + MobileAirplaneController.instance.yawInput;
-
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            thrustPercent = thrustPercent > 0 ? 0 : 1f;
-        }
-        
-
-        thrustPercent = MobileAirplaneController.instance.slider.value;
-        brakesTorque = MobileAirplaneController.instance.brakeSlider.value;
-
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Flap = Flap > 0 ? 0 : 0.3f;
-        }
-/*
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            brakesTorque = brakesTorque > 0 ? 0 : 100f;
-        }
-*/
-
-        displayText.text = "V: " + ((int)rb.velocity.magnitude).ToString("D3") + " m/s\n";
-        displayText.text += "A: " + ((int)transform.position.y).ToString("D4") + " m\n";
-        displayText.text += "T: " + (int)(thrustPercent * 100) + "%\n";
-        displayText.text += brakesTorque > 0 ? "B: ON" : "B: OFF";
+        Debug.LogError("MobileAirplaneController.instance is null! Pastikan MobileAirplaneController ada dan aktif di scene.");
+        return; // Hentikan eksekusi untuk mencegah error lebih lanjut.
     }
+
+    if (MobileAirplaneController.instance.slider == null || MobileAirplaneController.instance.brakeSlider == null)
+    {
+        Debug.LogError("Slider atau brakeSlider di MobileAirplaneController belum dihubungkan di Inspector!");
+        return; // Hindari akses lebih lanjut jika slider tidak valid.
+    }
+
+    // Input dari Keyboard untuk Pitch, Roll, dan Yaw
+    Pitch = Input.GetAxis("Vertical") + MobileAirplaneController.instance.verticalInput;
+    Roll = Input.GetAxis("Horizontal") + MobileAirplaneController.instance.horizontalInput;
+    Yaw = Input.GetAxis("Yaw") + MobileAirplaneController.instance.yawInput;
+
+    // Kontrol thrust dengan tombol Space (menambah) dan LeftShift (mengurangi)
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        thrustPercent = Mathf.Clamp(thrustPercent + 0.1f, 0f, 1f); // Tambah thrust 10%
+        MobileAirplaneController.instance.slider.value = thrustPercent; // Sinkronkan slider
+    }
+    if (Input.GetKeyDown(KeyCode.LeftShift))
+    {
+        thrustPercent = Mathf.Clamp(thrustPercent - 0.1f, 0f, 1f); // Kurangi thrust 10%
+        MobileAirplaneController.instance.slider.value = thrustPercent; // Sinkronkan slider
+    }
+
+    // Kontrol brake dengan tombol B
+    if (Input.GetKeyDown(KeyCode.B))
+{
+    // Toggle brake antara ON (1) dan OFF (0)
+    brakesTorque = brakesTorque > 0 ? 0 : 100f;
+
+    // Sinkronkan slider untuk mencerminkan nilai brake
+    MobileAirplaneController.instance.brakeSlider.value = brakesTorque > 0 ? 1f : 0f;
+}
+
+    // Kontrol flap (sudah ada di kode Anda)
+    if (Input.GetKeyDown(KeyCode.F))
+    {
+        Flap = Flap > 0 ? 0 : 0.3f;
+    }
+
+    // Input thrust dan brake dari slider (tetap berjalan)
+    thrustPercent = MobileAirplaneController.instance.slider.value;
+    brakesTorque = MobileAirplaneController.instance.brakeSlider.value > 0 ? 100f : 0f;
+
+    // Tampilkan informasi ke UI
+    displayText.text = "V: " + ((int)rb.velocity.magnitude).ToString("D3") + " m/s\n";
+    displayText.text += "A: " + ((int)transform.position.y).ToString("D4") + " m\n";
+    displayText.text += "T: " + (int)(thrustPercent * 100) + "%\n";
+    displayText.text += brakesTorque > 0 ? "B: ON" : "B: OFF";
+}
+
 
     private void FixedUpdate()
     {
