@@ -8,11 +8,10 @@ public class MenuMusic : MonoBehaviour
 
     void Awake()
     {
-        // Pastikan hanya ada satu instance musik
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Jangan hancurkan GameObject saat ganti scene
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
