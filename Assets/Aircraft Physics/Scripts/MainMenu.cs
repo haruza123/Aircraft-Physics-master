@@ -45,6 +45,14 @@ public class MainMenu : MonoBehaviour
         // Simpan pesawat yang sedang dipilih dan pindah ke scene Flight
         PlayerPrefs.SetInt("SelectedAircraft", currentIndex);
         Debug.Log("Selected Aircraft Index set to: " + currentIndex);
+
+    GameObject music = GameObject.Find("MainMenuMusic");
+    if (music != null)
+    {
+        Destroy(music); // Hancurkan musik saat pindah scene
+    }
+
+
         SceneManager.LoadSceneAsync("Flight"); // Pindah ke scene simulasi
     }
 
@@ -63,6 +71,12 @@ public class MainMenu : MonoBehaviour
             currentPreview = Instantiate(aircraftPrefabs[aircraftIndex], previewHolder.position, Quaternion.identity, previewHolder);
             currentPreview.transform.localRotation = Quaternion.Euler(0, 180, 0); // Rotasi model (opsional)
         }
+        AudioSource engineSound = currentPreview.GetComponentInChildren<AudioSource>();
+        if (engineSound != null)
+        {
+            engineSound.enabled = false; // Nonaktifkan AudioSource
+        }
+
     }
 
     // Fungsi untuk tombol Next (kanan)

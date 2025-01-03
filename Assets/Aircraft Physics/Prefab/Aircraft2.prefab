@@ -1439,12 +1439,31 @@ PrefabInstance:
     - target: {fileID: 1668942335272531416, guid: eac7e75682ac71447a04eed7f56efbbb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1668942336621946484, guid: eac7e75682ac71447a04eed7f56efbbb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668942336695769712, guid: eac7e75682ac71447a04eed7f56efbbb,
+        type: 3}
+      propertyPath: m_Text
+      value: 'CONTROLS
+
+        PITCH - Left Stick Vertical or W/S
+
+        ROLL
+        - Left Stick Horizontal or A/D
+
+        YAW - Triggers or Q/E
+
+        BRAKES
+        TOGGLE - B
+
+        THROTTLE TOGGLE - Space
+
+        THROTTLE DOWN - L shift'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac7e75682ac71447a04eed7f56efbbb, type: 3}
@@ -1476,6 +1495,11 @@ PrefabInstance:
     - target: {fileID: 5744621651431073472, guid: ee73f2edaa4ad5341936f7a494d6a2ed,
         type: 3}
       propertyPath: m_Name
+      value: Engine Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744621651431073472, guid: ee73f2edaa4ad5341936f7a494d6a2ed,
+        type: 3}
+      propertyPath: m_TagString
       value: Engine Sound
       objectReference: {fileID: 0}
     - target: {fileID: 7502476316252725455, guid: ee73f2edaa4ad5341936f7a494d6a2ed,

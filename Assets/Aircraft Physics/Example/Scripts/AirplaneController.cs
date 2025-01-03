@@ -52,7 +52,6 @@ public class AirplaneController : MonoBehaviour
 {
     if (MobileAirplaneController.instance == null)
     {
-        Debug.LogError("MobileAirplaneController.instance is null! Pastikan MobileAirplaneController ada dan aktif di scene.");
         return; // Hentikan eksekusi untuk mencegah error lebih lanjut.
     }
 

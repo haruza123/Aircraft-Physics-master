@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 3214285540866771164}
   m_Layer: 0
   m_Name: EngineSound
-  m_TagString: Untagged
+  m_TagString: Engine Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,7 +688,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3679827763974500179}
-  m_LocalRotation: {x: 0.06112799, y: -0.0063790847, z: 0.00039067926, w: 0.9981095}
+  m_LocalRotation: {x: 0.06112799, y: -0.0063790856, z: 0.00039067926, w: 0.9981095}
   m_LocalPosition: {x: 5.4305696, y: 0.15618181, z: -14.126567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1546,6 +1546,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 800
       objectReference: {fileID: 0}
+    - target: {fileID: 1668942336695769712, guid: eac7e75682ac71447a04eed7f56efbbb,
+        type: 3}
+      propertyPath: m_Text
+      value: 'CONTROLS
+
+        PITCH - Left Stick Vertical or W/S
+
+        ROLL
+        - Left Stick Horizontal or A/D
+
+        YAW - Triggers or Q/E
+
+        BRAKES
+        TOGGLE - B
+
+        THROTTLE TOGGLE - Space
+
+        THROTTLE DOWN - L shift'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac7e75682ac71447a04eed7f56efbbb, type: 3}
 --- !u!224 &5354146598520123148 stripped
@@ -1581,6 +1600,11 @@ PrefabInstance:
     - target: {fileID: 5744621651431073472, guid: ee73f2edaa4ad5341936f7a494d6a2ed,
         type: 3}
       propertyPath: m_Name
+      value: Engine Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744621651431073472, guid: ee73f2edaa4ad5341936f7a494d6a2ed,
+        type: 3}
+      propertyPath: m_TagString
       value: Engine Sound
       objectReference: {fileID: 0}
     - target: {fileID: 7502476316252725455, guid: ee73f2edaa4ad5341936f7a494d6a2ed,
